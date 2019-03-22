@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="/bootstrap/jQuary.js"></script>
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/public/header.css">
+    <link rel="stylesheet" href="/css/product.css">
+</head>
+
+<div class="header">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#"><img src="/images/logo.png"/></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">首页</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">商品管理</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">文件管理</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">系统设置</a>
+        </li>
+        <li class="nav-item" style="float: right;">
+            <span>欢迎,<%=userInfo.userName%></span>
+            <a href="/user/logout">安全退出</a>
+        </li>
+    </ul>
+</div>

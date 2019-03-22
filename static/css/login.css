@@ -1,0 +1,25 @@
+.bg-color:after{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    content: '';
+    background: linear-gradient(-135deg, #21deda, #41a5e0 60%, #6b44c1);
+}
+
+.form{
+    padding: 3rem 3rem 2rem 3rem;
+    background: #fff;
+    border-radius: 1rem;
+    margin: 10rem auto;
+}
+
+.form-title{
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+}

@@ -1,0 +1,66 @@
+<title>商品列表</title>
+
+<body>
+<div>
+    <% include ./../public/header.ejs %>
+    <div class="container-fluid pt-common">
+        <div class="row">
+            <div class="col col-md-4">
+                <% include ./../public/slider.ejs %>
+            </div>
+
+            <div class="col col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">商品管理</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">商品列表</li>
+                    </ol>
+                </nav>
+
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background-color: rgba(0, 0, 0, 0.05)">搜索</li>
+                        <li class="list-group-item">
+                            <form class="form-inline">
+                                <label for="inputPassword2" class="align-middle mr-2">名称</label>
+                                <input class="form-control mr-sm-2" type="search" placeholder="商品名称" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">开始搜索</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                <table class="table table-hover text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">编号</th>
+                        <th scope="col">产品名称</th>
+                        <th scope="col">产品价格</th>
+                        <th scope="col">邮费</th>
+                        <th scope="col">产品图示</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%for(let i = 0; i < data.length; i++){%>
+                        <tr>
+                            <th scope="row" class="align-middle"><%=i+1%></th>
+                            <td class="align-middle"><%=data[i].title%></td>
+                            <td class="align-middle"><%=data[i].price%></td>
+                            <td class="align-middle"><%=data[i].fee%></td>
+                            <td class="align-middle"><%=data[i].picUrl%></td>
+                            <td class="align-middle">
+                                <a class="btn btn-outline-info btn-sm" role="button" href="/product/detail/<%=data[i]._id%>">查看</a>
+                                <a class="btn btn-outline-primary btn-sm" href="/product/edit/<%=data[i]._id%>">编辑</a>
+                                <a class="btn btn-outline-danger btn-sm" href="/product/doDelete/<%=data[i]._id%>">删除</a>
+                            </td>
+                        </tr>
+                    <%}%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+<title>商品编辑</title>
+
+<body>
+<div>
+    <% include ../public/header.ejs %>
+    <div class="container-fluid pt-common">
+        <div class="row">
+            <div class="col col-md-4">
+                <% include ../public/slider.ejs %>
+            </div>
+
+            <div class="col col-md-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">商品管理</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">商品列表</li>
+                    </ol>
+                </nav>
+
+                <form class="form-inline row" action="/product/doEdit" method="post">
+                    <input type="text" name="id" value="<%=data[0].title%>" hidden>
+                    <div class="form-group col-12 mb-2">
+                        <label class="mr-2" for="name">商品名称：</label>
+                        <input type="text" class="form-control" id="name" placeholder="商品名称" value="<%=data[0].title%>">
+                    </div>
+                    <div class="form-group col-12 mb-2">
+                        <label class="mr-2" for="img">商品图片：</label>
+                        <input type="file" class="form-control-file form-file" id="img">
+                    </div>
+                    <div class="form-group col-12 mb-2">
+                        <label class="mr-2" for="price">商品价格：</label>
+                        <input type="text" class="form-control" id="price" placeholder="商品价格" value="<%=data[0].price%>">
+                    </div>
+                    <div class="form-group col-12 mb-2">
+                        <label class="mr-2" for="postage">商品邮费：</label>
+                        <input type="text" class="form-control" id="postage" placeholder="商品邮费" value="<%=data[0].fee%>">
+                    </div>
+                    <div class="form-group col-12 mb-2">
+                        <label class="mr-2 align-top" for="describe">商品描述：</label>
+                        <textarea class="form-control" aria-label="With textarea" id="describe" placeholder="商品描述"><%=data[0].description%></textarea>
+                    </div>
+                    <div class="form-group col-12 mb-2">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.list-border-none{
+    border-top: 1px solid rgba(0,0,0,.125);
+    border-right: none!important;
+    border-left: none!important;
+    border-bottom: none;
+}
+.list-border-none:nth-child(1){
+    border-top: none!important;
+}
